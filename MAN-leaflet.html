@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>MAN - Leaflet</title>
+
+    <!-- Bootstrap -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) 
+     defer="defer" -->
+    <script src="js/jquery.min.js"></script>
+    <!-- Include all compiled plugins (below), or include individual files as needed -->
+    <script src="js/bootstrap.min.js"></script>
+    
+    <!-- Leaflet files --> 
+    <link href="css/leaflet.css" rel="stylesheet">
+    <link href="css/man-leaflet.css" rel="stylesheet">
+    
+    <script src="js/leaflet.js"></script>
+    <!-- <script src="shapes/us-states.js"></script> -->
+    <!-- <script src="shapes/Natura2000.geojson.js"></script> -->
+    <script src="shapes/ngr-cbs-provincies-wfs-WGS.geojson.js"></script>
+    <!-- 
+    <script src="shapes/ngr-natura2000-wfs-WGS.geojson.js"></script> 
+    <script src="shapes/Natura2000-MAN.geojson.js"></script>
+    <script src="shapes/Natura 2000-gebieden_NGR_GML32_ESRI_MAN.geojson.js"></script>  -->
+    <script src="shapes/Natura 2000-gebieden_NGR_GML32_ESRI_MAN_code.geojson.js"></script>
+    <script src="shapes/Niet-natura2000.geojson.js"></script>
+    
+    <script defer="defer" src="js/man-leaflet.js"></script>
+    
+  </head>
+  <body>
+    <nav class="navbar navbar-default">
+        <div class="container">
+          <div class="navbar-header">
+            <button class="navbar-toggle collapsed" type="button" data-toggle="collapse" data-target=".navbar-collapse">
+              <span class="sr-only">Toggle navigation</span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+              <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="#">Project name</a>
+          </div>
+          <div class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+              <li class="active"><a href="#">Home</a></li>
+              <li><a href="#about">About</a></li>
+              <li><a href="#contact">Contact</a></li>
+              <li class="dropdown">
+                <a class="dropdown-toggle" role="button" aria-expanded="false" aria-haspopup="true" href="#" data-toggle="dropdown">Dropdown <span class="caret"></span></a>
+                <ul class="dropdown-menu">
+                  <li><a href="#">Action</a></li>
+                  <li><a href="#">Another action</a></li>
+                  <li><a href="#">Something else here</a></li>
+                  <li class="divider" role="separator"></li>
+                  <li class="dropdown-header">Nav header</li>
+                  <li><a href="#">Separated link</a></li>
+                  <li><a href="#">One more separated link</a></li>
+                </ul>
+              </li>
+            </ul>
+          </div><!--/.nav-collapse -->
+        </div>
+      </nav>
+    
+    <h1>MAN - Leaflet</h1>
+  
+    <div id="map"></div>
+    
+  </body>
+</html>
