@@ -1,0 +1,170 @@
+p 
+{   margin: 0 0 .5em;
+}
+.kolom
+{
+    float: left;
+    width: 640px;
+}
+
+.kolom.rechter
+{
+    width: 250px;
+}
+
+/* Directnaar skiplinks zichtbaar maken bij focus */
+#directnaar a:focus {
+    font-size: 16px;
+    position: absolute;
+    left: 1000px;
+    margin-left: 1em;
+    padding: 0.2em;
+    z-index: 100;
+    outline: medium solid blue;
+}
+
+
+div#lijstcontainer ol
+{
+    overflow: auto;
+    font-size: 1em;
+    line-height: 1em;
+    margin: 0;
+    height: 50em;
+}
+div#lijstcontainer ol li
+{
+    list-style-type: none;
+    margin: 0;
+}
+
+.active
+{
+    color: red;
+}
+.hide
+{
+    display: none;
+}
+
+#detailpopup
+{
+    background-color: #f6d4b2;
+    padding: 0.5em;
+    min-height: 16em;
+}
+
+#detailpopup h2, dl
+{
+    margin: 0;
+}
+#detailpopup dd
+{
+margin-left: 0;
+        margin-top: 0.5em;
+}
+
+#detailpopup dt
+{
+    font-style: italic;
+    margin-top: 0.5em;
+    float: left;
+    clear: left;
+    width: 105px;
+    font-weight: bold;
+}
+
+#detailpopup dt.hide 
+{
+    float: none;
+}
+
+#kaartimage
+{
+    padding: 0;
+    margin-top: -50px;
+}
+
+#inhoudkolom
+{
+    width: 890px;
+}
+
+/* Meetwaarde-tabellen */
+#meetwaarden_vergelijkbaar_container,
+#meetwaarden_container 
+{
+   margin-bottom: 4em;
+}
+
+/* gebiedskenmerken op details-pagina */
+.teruglink
+{
+    float: right;
+    margin-top: -2em;
+}
+div.kenmerken_container 
+{
+    overflow: hidden;
+}
+.kaart.rechts img
+{
+    padding-top: 0;
+     max-height: 350px;
+    /* width: 350px; */
+}
+
+dl.tabel
+{
+    width: 522px;
+    background-color: #f6d4b2;
+}
+dl.tabel dt
+{
+    float: left;
+    clear: left;
+    width: 140px;
+    text-align: left;
+    font-weight: bold;
+    padding: .5em;
+    border-top: 1px solid #fff;
+    min-height: 1.4em;
+}
+
+dl.tabel dt:first-child
+{
+    border: none;
+}
+
+dl.tabel dd
+{
+    border-top: 1px solid #fff;
+    background-color: #FBEAD9;
+    margin-left: 150px;
+    padding: .5em;
+    min-height: 1.4em;
+}
+
+#inhoudkolom table
+{
+    width: 80%;
+    border: 1px;
+    cellspacing: 0;
+    margin-top:2em;
+}
+#inhoudkolom table thead th
+{
+    text-align: center;
+}
+#inhoudkolom table td
+{
+    text-align: right;
+    max-width: 5em;
+}
+.contentarea h2 {
+    margin: 1.4em 0 10px;
+}
+
+.contentarea .MAN_lijst h2, .contentarea .MAN_lijst dl {
+    margin: 10px 0;
+}

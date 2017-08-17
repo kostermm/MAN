@@ -19,17 +19,20 @@
     <!-- Leaflet files --> 
     <link href="css/leaflet.css" rel="stylesheet">
     <link href="css/man-leaflet.css" rel="stylesheet">
+    <link href="css/man.css" rel="stylesheet">
     
-    <script src="js/leaflet.js"></script>
-    <!-- <script src="shapes/us-states.js"></script> -->
+    <script src="js/leaflet.js.download"></script>
+    <!-- <script type="text/javascript" src="js/proj4-compressed.js"></script> -->
+    <!-- <script type="text/javascript" src="js/leaflet.rd.mk.js"></script> -->
+  
     <!-- <script src="shapes/Natura2000.geojson.js"></script> -->
-    <script src="shapes/ngr-cbs-provincies-wfs-WGS.geojson.js"></script>
+    <!-- <script src="shapes/ngr-cbs-provincies-wfs-WGS.simple.geojson.js"></script> -->
     <!-- 
-    <script src="shapes/ngr-natura2000-wfs-WGS.geojson.js"></script> 
-    <script src="shapes/Natura2000-MAN.geojson.js"></script>
-    <script src="shapes/Natura 2000-gebieden_NGR_GML32_ESRI_MAN.geojson.js"></script>  -->
-    <script src="shapes/Natura 2000-gebieden_NGR_GML32_ESRI_MAN_code.geojson.js"></script>
-    <script src="shapes/Niet-natura2000.geojson.js"></script>
+    <script src="shapes/Natura 2000-gebieden_NGR_MAN_RD.simple.geojson.js"></script>
+	-->
+  <script src="shapes/Natura 2000-gebieden_NGR_MAN_code.simple.geojson.js"></script>
+
+  <!-- <script src="shapes/Niet-natura2000.geojson.js"></script> -->
     
     <script defer="defer" src="js/man-leaflet.js"></script>
     
@@ -70,7 +73,1469 @@
     
     <h1>MAN - Leaflet</h1>
   
-    <div id="map"></div>
+    <div class="contentarea">
+                
+      <div class="kolom">
+        <h2>Kaart met MAN gebieden</h2>
+        <div id="map"></div>
+          
+      </div>
+        <div class="kolom rechter">
+            <div class="hide" id="detailpopup">
+            </div>
+            <div id="lijstcontainer">
+                <h2>
+                    Lijst met gebieden</h2>
+                <ol class="MAN_lijst">
+                        <li id="MAN_2">
+                            <div class="link">
+                                <a href="/man/gebied/bargerveen">Bargerveen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Bargerveen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Bargerveen is het grootste hoogveenrestant van Nederland met belangrijke natte natuur</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2008</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/bargerveen">Bekijk de meetresultaten en gebiedskenmerken van Bargerveen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_84">
+                            <div class="link">
+                                <a href="/man/gebied/bennekomse_meent">Bennekomse Meent</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Bennekomse Meent</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Bennekomse Meent is een klein blauwgraslandreservaat in de Gelderse Vallei</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/bennekomse_meent">Bekijk de meetresultaten en gebiedskenmerken van Bennekomse Meent</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_5">
+                            <div class="link">
+                                <a href="/man/gebied/biesbosch">Biesbosch</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Biesbosch</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Biesbosch was een in Europa uniek uitgestrekt zoetwatergetijdengebied dat door de Deltawerken echter is veranderd in een verruigd moerasgebied</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/biesbosch">Bekijk de meetresultaten en gebiedskenmerken van Biesbosch</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_906">
+                            <div class="link">
+                                <a href="/man/gebied/blijham_de_wedderbergen">Blijham - De Wedderbergen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Blijham - De Wedderbergen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Wedderbergen is een recreatiegebied met bos, water en grasland</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/blijham_de_wedderbergen">Bekijk de meetresultaten en gebiedskenmerken van Blijham - De Wedderbergen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_87">
+                            <div class="link">
+                                <a href="/man/gebied/boetelerveld">Boetelerveld</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Boetelerveld</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Boetelerveld is een vochtig heideterrein met bos en vennen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2006</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/boetelerveld">Bekijk de meetresultaten en gebiedskenmerken van Boetelerveld</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_88">
+                            <div class="link">
+                                <a href="/man/gebied/boschhuizerbergen">Boschhuizerbergen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Boschhuizerbergen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Boschhuizerbergen is een stuifzandgebied met veel jeneverbesstruweel omgeven door bos</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2006</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/boschhuizerbergen">Bekijk de meetresultaten en gebiedskenmerken van Boschhuizerbergen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_54">
+                            <div class="link">
+                                <a href="/man/gebied/brabantse_wal">Brabantse Wal</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Brabantse Wal</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Brabantse Wal is een heuvelachtig gebied met een gevarieerde natuur met veel bos</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/brabantse_wal">Bekijk de meetresultaten en gebiedskenmerken van Brabantse Wal</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_8">
+                            <div class="link">
+                                <a href="/man/gebied/brunssummerheide">Brunssummerheide</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Brunssummerheide</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Brunssummerheide is een sterk geaccidenteerd heide- en bosgebied met o.a. hoogveen en een beek</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2006</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/brunssummerheide">Bekijk de meetresultaten en gebiedskenmerken van Brunssummerheide</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_9">
+                            <div class="link">
+                                <a href="/man/gebied/buurserzand_en_haaksbergerveen">Buurserzand en Haaksbergerveen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Buurserzand en Haaksbergerveen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Buurserzand is een heidegebied met vennen en jeneverbesstruweel, het Haaksbergerveen is een veengebied</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/buurserzand_en_haaksbergerveen">Bekijk de meetresultaten en gebiedskenmerken van Buurserzand en Haaksbergerveen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_6">
+                            <div class="link">
+                                <a href="/man/gebied/de_borkeld_en_elssenerveld">De Borkeld en Elssenerveld</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>De Borkeld en Elssenerveld</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Borkeld is een deel van een stuwwal met verschillende natuurtypen die echter vaak last hebben van vergrassing </dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2006</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/de_borkeld_en_elssenerveld">Bekijk de meetresultaten en gebiedskenmerken van De Borkeld en Elssenerveld</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_907">
+                            <div class="link">
+                                <a href="/man/gebied/de_maashorst">De Maashorst</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>De Maashorst</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Maashorst is een groot bosgebied met open, deels agrarische terreinen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/de_maashorst">Bekijk de meetresultaten en gebiedskenmerken van De Maashorst</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_11">
+                            <div class="link">
+                                <a href="/man/gebied/dinkelland">Dinkelland</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Dinkelland</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Dinkelland bestaat uit het beekdal van de Dinkel met een aantal zijbeken en drie kleine gevarieerde heideterreinen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/dinkelland">Bekijk de meetresultaten en gebiedskenmerken van Dinkelland</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_12">
+                            <div class="link">
+                                <a href="/man/gebied/drentse_aa">Drentse Aa</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Drentse Aa</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Drentse Aa-gebied is een beekdallandschap met een grote variëteit aan oude cultuurlandschappen afgewisseld door natuur. </dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/drentse_aa">Bekijk de meetresultaten en gebiedskenmerken van Drentse Aa</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_13">
+                            <div class="link">
+                                <a href="/man/gebied/drents-friese_wold">Drents-Friese Wold</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Drents-Friese Wold</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Drents-Friese Wold vormt een zeer afwisselend landschap met o.a. bossen, heide, grasland en vennen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/drents-friese_wold">Bekijk de meetresultaten en gebiedskenmerken van Drents-Friese Wold</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_319">
+                            <div class="link">
+                                <a href="/man/gebied/duinen_texel_en_achterland">Duinen Texel en achterland</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Duinen Texel en achterland</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het gebied bestaat uit een uitgestrekt duingebied in het westen met o.a. een kweldergebied en een aantal natuurgebieden in de polder</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2013</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/duinen_texel_en_achterland">Bekijk de meetresultaten en gebiedskenmerken van Duinen Texel en achterland</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_23">
+                            <div class="link">
+                                <a href="/man/gebied/dwingelderveld">Dwingelderveld</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Dwingelderveld</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Dwingelderveld is een uitgestrekt heideterrein met in het noorden veel bos</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/dwingelderveld">Bekijk de meetresultaten en gebiedskenmerken van Dwingelderveld</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_136">
+                            <div class="link">
+                                <a href="/man/gebied/eilandspolder">Eilandspolder</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Eilandspolder</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Eilandspolder is een ontgonnen hoogveenvlakte met veel veengrasland en in het westen ook open water</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/eilandspolder">Bekijk de meetresultaten en gebiedskenmerken van Eilandspolder</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_1040">
+                            <div class="link">
+                                <a href="/man/gebied/engbertsdijksvenen">Engbertsdijksvenen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Engbertsdijksvenen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Engertsdijksvenen is een grotendeels afgegraven veengebied met een nog actieve hoogveenkern</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/engbertsdijksvenen">Bekijk de meetresultaten en gebiedskenmerken van Engbertsdijksvenen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_25">
+                            <div class="link">
+                                <a href="/man/gebied/fochteloerveen_en_esmeer">Fochteloërveen en Esmeer</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Fochteloërveen en Esmeer</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Fochteloërveen is een vrij jong hoogveengebied met heide</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2008</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/fochteloerveen_en_esmeer">Bekijk de meetresultaten en gebiedskenmerken van Fochteloërveen en Esmeer</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_28">
+                            <div class="link">
+                                <a href="/man/gebied/geuldal">Geuldal</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Geuldal</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Geuldal is een beekdalgebied met grote hoogteverschillen en een afwisseling van cultuurland en natuur</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/geuldal">Bekijk de meetresultaten en gebiedskenmerken van Geuldal</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_30">
+                            <div class="link">
+                                <a href="/man/gebied/grevelingen">Grevelingen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Grevelingen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Grevelingen is een voormalige zeearm dat nu het grootste zoutwatermeer is van Europa</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2012</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/grevelingen">Bekijk de meetresultaten en gebiedskenmerken van Grevelingen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_32">
+                            <div class="link">
+                                <a href="/man/gebied/groote_peel">Groote Peel</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Groote Peel</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Groote Peel is een afwisselend voormalig hoogveengebied met o.a. heide en grote vennen in een omgeving met zeer veel ammoniakbronnen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/groote_peel">Bekijk de meetresultaten en gebiedskenmerken van Groote Peel</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_98">
+                            <div class="link">
+                                <a href="/man/gebied/groote_wielen">Groote Wielen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Groote Wielen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Groote Wielen is een gebied met graslanden, rietmoeras, grote plassen en vaarten</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/groote_wielen">Bekijk de meetresultaten en gebiedskenmerken van Groote Wielen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_33">
+                            <div class="link">
+                                <a href="/man/gebied/haringvliet">Haringvliet</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Haringvliet</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Haringvliet is een afgesloten zeearm dat nu een groot zoetwaterbekken vormt met een variatie aan oevernatuur</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2013</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/haringvliet">Bekijk de meetresultaten en gebiedskenmerken van Haringvliet</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_921">
+                            <div class="link">
+                                <a href="/man/gebied/hazenputten">Hazenputten</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Hazenputten</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Hazenputten is een bosgebied met veenplassen, met aan de westzijde hooigraslanden langs de Dommel</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/hazenputten">Bekijk de meetresultaten en gebiedskenmerken van Hazenputten</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_902">
+                            <div class="link">
+                                <a href="/man/gebied/horsterwold">Horsterwold</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Horsterwold</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Horsterwold is een groot bosgebied met open velden en water</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/horsterwold">Bekijk de meetresultaten en gebiedskenmerken van Horsterwold</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_35">
+                            <div class="link">
+                                <a href="/man/gebied/kampina">Kampina</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Kampina</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Kampina is een gevarieerd natuurgebied met heide, bos, vennen en stukjes cultuurlandschap</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/kampina">Bekijk de meetresultaten en gebiedskenmerken van Kampina</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_905">
+                            <div class="link">
+                                <a href="/man/gebied/kantens_rietveld">Kantens Rietveld</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Kantens Rietveld</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Rietveld is een klein rietveld met water in een agrarische omgeving </dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/kantens_rietveld">Bekijk de meetresultaten en gebiedskenmerken van Kantens Rietveld</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_135">
+                            <div class="link">
+                                <a href="/man/gebied/kempenland_west">Kempenland-West</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Kempenland-West</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Kempenland -West omvat enkele heidegebieden met vennen met daartussen laaglandbeken</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/kempenland_west">Bekijk de meetresultaten en gebiedskenmerken van Kempenland-West</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_37">
+                            <div class="link">
+                                <a href="/man/gebied/kennemerland">Kennemerland</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Kennemerland</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Kennemerland-Zuid is een uitgestrekt en afwisselend duingebied met een rijke natuur op de overgang van kalkrijke jonge duinen naar de kalkarme duinen van het noorden</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/kennemerland">Bekijk de meetresultaten en gebiedskenmerken van Kennemerland</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_38">
+                            <div class="link">
+                                <a href="/man/gebied/kop_van_schouwen">Kop van Schouwen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Kop van Schouwen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Kop van Schouwen is een afwisselend open duingebied met steile duinen, bossen en in het oosten ook wat oud cultuurlandschap</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/kop_van_schouwen">Bekijk de meetresultaten en gebiedskenmerken van Kop van Schouwen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_39">
+                            <div class="link">
+                                <a href="/man/gebied/korenburgerveen">Korenburgerveen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Korenburgerveen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Korenburgerveen is een veen- en moerasgebied op de overgang van hoogveen naar laagveen en zandlandschap met daardoor een rijke natuur</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/korenburgerveen">Bekijk de meetresultaten en gebiedskenmerken van Korenburgerveen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_40">
+                            <div class="link">
+                                <a href="/man/gebied/krammer-volkerak">Krammer-Volkerak</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Krammer-Volkerak</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Krammer-Volkerak is een afgesloten zeearm met 40 eilandjes waar de vegetatie verandert  door de geleidelijke ontziting van de bodem</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2013</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/krammer-volkerak">Bekijk de meetresultaten en gebiedskenmerken van Krammer-Volkerak</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_1130">
+                            <div class="link">
+                                <a href="/man/gebied/langstraat">Langstraat</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Langstraat</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De langstraat is een ontgonnen laagveenvlakte en een oud slagen landschap</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2016</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/langstraat">Bekijk de meetresultaten en gebiedskenmerken van Langstraat</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_1008">
+                            <div class="link">
+                                <a href="/man/gebied/lauwersmeer">Lauwersmeer</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Lauwersmeer</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het nationaal park Lauwersmeer is een uitgestrekt open kustnatuurgebied</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/lauwersmeer">Bekijk de meetresultaten en gebiedskenmerken van Lauwersmeer</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_19">
+                            <div class="link">
+                                <a href="/man/gebied/leekstermeergebied">Leekstermeergebied</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Leekstermeergebied</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Leekstermeergebied is een open veenweidelandschap grenzend aan  het Leekstermeer</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/leekstermeergebied">Bekijk de meetresultaten en gebiedskenmerken van Leekstermeergebied</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_1136">
+                            <div class="link">
+                                <a href="/man/gebied/leenderbos_groote_heide_en_de_plateaux">Leenderbos, Groote Heide &amp; De Plateaux</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Leenderbos, Groote Heide &amp; De Plateaux</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Dit gebied is een groot bosgebied afgewisseld met heidevelden met vennen, doorsneden door beekdalen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2016</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/leenderbos_groote_heide_en_de_plateaux">Bekijk de meetresultaten en gebiedskenmerken van Leenderbos, Groote Heide &amp; De Plateaux</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_42">
+                            <div class="link">
+                                <a href="/man/gebied/loonse_en_drunense_duinen">Loonse en Drunense Duinen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Loonse en Drunense Duinen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Loonse en Drunense Duinen is een stuifzandgebied omringd door bos met in het zuiden een beekdal met bos, moeras en vennen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/loonse_en_drunense_duinen">Bekijk de meetresultaten en gebiedskenmerken van Loonse en Drunense Duinen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_43">
+                            <div class="link">
+                                <a href="/man/gebied/maasduinen">Maasduinen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Maasduinen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Maasduinen is een langgerekt en gevarieerd landduinenlandschap</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/maasduinen">Bekijk de meetresultaten en gebiedskenmerken van Maasduinen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_44">
+                            <div class="link">
+                                <a href="/man/gebied/manteling_van_walcheren">Manteling van Walcheren</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Manteling van Walcheren</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Manteling van Walcheren is een vrij smal duingebied  met bossen, duinvalleien en landgoederen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/manteling_van_walcheren">Bekijk de meetresultaten en gebiedskenmerken van Manteling van Walcheren</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_45">
+                            <div class="link">
+                                <a href="/man/gebied/mariapeel">Mariapeel</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Mariapeel</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Mariapeel is een grotendeels open gebied met moeras, heide, bos en vennen in een omgeving met zeer veel ammoniakbronnen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/mariapeel">Bekijk de meetresultaten en gebiedskenmerken van Mariapeel</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_129">
+                            <div class="link">
+                                <a href="/man/gebied/mastbos_ulvenhoutse_bos">Mastbos (Ulvenhoutse Bos)</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Mastbos (Ulvenhoutse Bos)</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Ulvenhoutse bos is een klein bosgebied met enkele beeklopen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2016</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/mastbos_ulvenhoutse_bos">Bekijk de meetresultaten en gebiedskenmerken van Mastbos (Ulvenhoutse Bos)</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_47">
+                            <div class="link">
+                                <a href="/man/gebied/meinweg">Meinweg</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Meinweg</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Meinweg is een grensoverschrijdend natuurgebied met flinke hoogteverschillen en een gevarieerde natuur</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/meinweg">Bekijk de meetresultaten en gebiedskenmerken van Meinweg</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_46">
+                            <div class="link">
+                                <a href="/man/gebied/meyendel">Meyendel</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Meyendel</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Meyendel is een zeer afwisselend en uitgestrekt duinlandschap</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/meyendel">Bekijk de meetresultaten en gebiedskenmerken van Meyendel</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_48">
+                            <div class="link">
+                                <a href="/man/gebied/naardermeer">Naardermeer</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Naardermeer</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Naardermeergebied is een natuurlijk meer omgeven door ruigten en broekbossen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/naardermeer">Bekijk de meetresultaten en gebiedskenmerken van Naardermeer</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_990">
+                            <div class="link">
+                                <a href="/man/gebied/needse_achterveld">Needse Achterveld</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Needse Achterveld</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Needse Achterveld is een overblijfsel van het vroegere heidegebied met stukjes bos </dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2006</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/needse_achterveld">Bekijk de meetresultaten en gebiedskenmerken van Needse Achterveld</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_49">
+                            <div class="link">
+                                <a href="/man/gebied/nieuwkoopse_plassen">Nieuwkoopse Plassen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Nieuwkoopse Plassen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Nieuwkoopse Plassen is een schilderachtig plassengebied dat een belangrijk broedgebied is voor watervogels</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/nieuwkoopse_plassen">Bekijk de meetresultaten en gebiedskenmerken van Nieuwkoopse Plassen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_904">
+                            <div class="link">
+                                <a href="/man/gebied/nisse_de_poel">Nisse - De Poel</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Nisse - De Poel</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Poel is een klein open natuurgebied met oude kleinschalige landschapselementen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/nisse_de_poel">Bekijk de meetresultaten en gebiedskenmerken van Nisse - De Poel</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_50">
+                            <div class="link">
+                                <a href="/man/gebied/noord-hollands_duinreservaat">Noord-Hollands Duinreservaat</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Noord-Hollands Duinreservaat</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Noord-Hollands Duinreservaat is een omvangrijk duingebied met vrij veel bos</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2012</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/noord-hollands_duinreservaat">Bekijk de meetresultaten en gebiedskenmerken van Noord-Hollands Duinreservaat</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_922">
+                            <div class="link">
+                                <a href="/man/gebied/nuland">Nuland</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Nuland</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het gebied is een klein bosgebied met zandduintjes, heide en poelen.</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/nuland">Bekijk de meetresultaten en gebiedskenmerken van Nuland</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_903">
+                            <div class="link">
+                                <a href="/man/gebied/oostburg_de_sophia">Oostburg - De Sophia</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Oostburg - De Sophia</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Sophia is een klein open natuurgebied met grasland en water</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/oostburg_de_sophia">Bekijk de meetresultaten en gebiedskenmerken van Oostburg - De Sophia</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_114">
+                            <div class="link">
+                                <a href="/man/gebied/oostelijke_vechtplassen">Oostelijke Vechtplassen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Oostelijke Vechtplassen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Oostelijke Vechtplassen bestaat uit laagveengebieden met meren en plassen en een rijke schakering aan moerastypen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/oostelijke_vechtplassen">Bekijk de meetresultaten en gebiedskenmerken van Oostelijke Vechtplassen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_53">
+                            <div class="link">
+                                <a href="/man/gebied/oosterschelde">Oosterschelde</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Oosterschelde</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Oosterschelde is een omvangrijke zeearm met nog enige getijdenwerking die ruimte biedt aan een grote variatie aan dier- en plantensoorten</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/oosterschelde">Bekijk de meetresultaten en gebiedskenmerken van Oosterschelde</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_78">
+                            <div class="link">
+                                <a href="/man/gebied/oostvaardersplassen">Oostvaardersplassen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Oostvaardersplassen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Oostvaardersplassen zijn ontstaan bij de inpoldering van het Flevoland en hebben zich ontwikkeld tot een enorm zoetwatermoeras met op de hogere delen een savanne-achtig grasland met vele grote grazers</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/oostvaardersplassen">Bekijk de meetresultaten en gebiedskenmerken van Oostvaardersplassen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_71">
+                            <div class="link">
+                                <a href="/man/gebied/pompveld">Pompveld</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Pompveld</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Pompveld is een kleine laaggelegen kleipolder</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/pompveld">Bekijk de meetresultaten en gebiedskenmerken van Pompveld</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_134">
+                            <div class="link">
+                                <a href="/man/gebied/regte_heide_en_riels_laag">Regte Heide &amp; Riels Laag</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Regte Heide &amp; Riels Laag</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Regte Heide &amp; Riels Laag bestaat uit beekdalen en een hoger gelegen dekzandlandschap met duingebiedjes</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/regte_heide_en_riels_laag">Bekijk de meetresultaten en gebiedskenmerken van Regte Heide &amp; Riels Laag</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_57">
+                            <div class="link">
+                                <a href="/man/gebied/rottige_meenthe_en_brandemeer">Rottige Meenthe en Brandemeer</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Rottige Meenthe en Brandemeer</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Rottige Meenthe en het Brandemeer zijn laagveenverlandingsgebieden</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2012</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/rottige_meenthe_en_brandemeer">Bekijk de meetresultaten en gebiedskenmerken van Rottige Meenthe en Brandemeer</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_924">
+                            <div class="link">
+                                <a href="/man/gebied/rucphen">Rucphen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Rucphen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het gebied bestaat  uit een omvangrijk bos met daarin enkele heidevelden</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/rucphen">Bekijk de meetresultaten en gebiedskenmerken van Rucphen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_58">
+                            <div class="link">
+                                <a href="/man/gebied/sallandse_heuvelrug">Sallandse Heuvelrug</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Sallandse Heuvelrug</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Sallandse Heuvelrug is een grote stuwwal met een daarvoor kenmerkende begroeiing</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/sallandse_heuvelrug">Bekijk de meetresultaten en gebiedskenmerken van Sallandse Heuvelrug</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_121">
+                            <div class="link">
+                                <a href="/man/gebied/sarsven_en_de_banen">Sarsven en De Banen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Sarsven en De Banen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Sarsven en de Banen zijn twee heidevennen in een Peelrestant.</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/sarsven_en_de_banen">Bekijk de meetresultaten en gebiedskenmerken van Sarsven en De Banen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_16">
+                            <div class="link">
+                                <a href="/man/gebied/schiermonnikoog">Schiermonnikoog</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Schiermonnikoog</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Schiermonnikoog is een vrij klein Waddeneiland en is grotendeels nog vrij ongerept</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/schiermonnikoog">Bekijk de meetresultaten en gebiedskenmerken van Schiermonnikoog</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_901">
+                            <div class="link">
+                                <a href="/man/gebied/schokland">Schokland</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Schokland</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Schokland is een klein voormalig eiland met bos en grasland</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/schokland">Bekijk de meetresultaten en gebiedskenmerken van Schokland</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_62">
+                            <div class="link">
+                                <a href="/man/gebied/sint_pietersberg">Sint Pietersberg</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Sint Pietersberg</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Sint Pietersberg is een voor Nederland uitzonderlijk natuurgebied met een grote variatie</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/sint_pietersberg">Bekijk de meetresultaten en gebiedskenmerken van Sint Pietersberg</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_1012">
+                            <div class="link">
+                                <a href="/man/gebied/sneekermeergebied">Sneekermeergebied</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Sneekermeergebied</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Sneekermeergebied is een oud polderlandschap rond het Sneekermeer</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/sneekermeergebied">Bekijk de meetresultaten en gebiedskenmerken van Sneekermeergebied</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_61">
+                            <div class="link">
+                                <a href="/man/gebied/springendal">Springendal</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Springendal</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Springendal is een deel van een stuwwal met een zeer diverse natuur en cultuurgebieden</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/springendal">Bekijk de meetresultaten en gebiedskenmerken van Springendal</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_122">
+                            <div class="link">
+                                <a href="/man/gebied/stelkampsveld">Stelkampsveld</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Stelkampsveld</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Stelkampsveld Is een Achterhoeks kampenlandschap met een kleinschalige afwisseling van essen, graslanden, heide en hoeven</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/stelkampsveld">Bekijk de meetresultaten en gebiedskenmerken van Stelkampsveld</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_920">
+                            <div class="link">
+                                <a href="/man/gebied/stippelberg">Stippelberg</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Stippelberg</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het gebied rondom de Stippelberg bestaat uit een aantal bos- en heidegebieden in een agrarisch landschap</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/stippelberg">Bekijk de meetresultaten en gebiedskenmerken van Stippelberg</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_63">
+                            <div class="link">
+                                <a href="/man/gebied/strabrechtse_heide">Strabrechtse Heide</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Strabrechtse Heide</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Strabrechtse heide is een heide- en stuifzandlandschap met vele vennen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/strabrechtse_heide">Bekijk de meetresultaten en gebiedskenmerken van Strabrechtse Heide</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_18">
+                            <div class="link">
+                                <a href="/man/gebied/terschelling">Terschelling</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Terschelling</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Terschelling is een Waddeneiland op grote afstand van ammoniakbronnen met veel waardevolle waddennatuur</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2006</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/terschelling">Bekijk de meetresultaten en gebiedskenmerken van Terschelling</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_15">
+                            <div class="link">
+                                <a href="/man/gebied/van_oordts_mersken">Van Oordt's Mersken</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Van Oordt's Mersken</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Van Oordt's Mersken is een beekdallandschap op de overgang van zandgrond naar laagveen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/van_oordts_mersken">Bekijk de meetresultaten en gebiedskenmerken van Van Oordt's Mersken</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_64">
+                            <div class="link">
+                                <a href="/man/gebied/vechtstreek">Vechtstreek</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Vechtstreek</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Vechtstreek bestaat uit het rivierlandschap van de Vecht en Beneden-Regge en het stuwwallandschap van o.a. de Archemer- en Lemelerberg met een rijk gevarieerde natuur</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/vechtstreek">Bekijk de meetresultaten en gebiedskenmerken van Vechtstreek</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_652">
+                            <div class="link">
+                                <a href="/man/gebied/veluwe_a50">Veluwe A50</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Veluwe A50</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Dit deelgebied bestaat uit heide met in het westen vrij veel bomen en bos, aan de westzijde direct tegen de vangrail van de A50 gelegen waar het verkeer ammoniak uitstoot</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2006</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/veluwe_a50">Bekijk de meetresultaten en gebiedskenmerken van Veluwe A50</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_65">
+                            <div class="link">
+                                <a href="/man/gebied/veluwe_algemeen">Veluwe algemeen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Veluwe algemeen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Veluwe is het grootste bosgebied van Nederland, waarbinnen ook talrijke heide velden en stuifzandgebieden aanwezig zijn</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/veluwe_algemeen">Bekijk de meetresultaten en gebiedskenmerken van Veluwe algemeen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_651">
+                            <div class="link">
+                                <a href="/man/gebied/veluwe_centrale_doorsnede">Veluwe centrale doorsnede</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Veluwe centrale doorsnede</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Veluwe centrale doorsnede bestaat voor een groot deel uit heideterreinen met veel ammoniakbronnen aan de westzijde</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2006</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/veluwe_centrale_doorsnede">Bekijk de meetresultaten en gebiedskenmerken van Veluwe centrale doorsnede</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_20">
+                            <div class="link">
+                                <a href="/man/gebied/vlieland">Vlieland</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Vlieland</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Vlieland is een Waddeneiland op grote afstand van ammoniakbronnen met een gevarieerde duinnatuur en bedijkte kwelders</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/vlieland">Bekijk de meetresultaten en gebiedskenmerken van Vlieland</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_1132">
+                            <div class="link">
+                                <a href="/man/gebied/vlijmens_ven_en_moerputten">Vlijmens Ven &amp; Moerputten</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Vlijmens Ven &amp; Moerputten</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Vlijmens Ven &amp; Moerputten is een gebied met moeras- en graslandvegetaties op de overgang tussen het zandlandschap van de Kempen en het Maasdal</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/vlijmens_ven_en_moerputten">Bekijk de meetresultaten en gebiedskenmerken van Vlijmens Ven &amp; Moerputten</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_68">
+                            <div class="link">
+                                <a href="/man/gebied/voornes_duin">Voornes duin</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Voornes duin</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Voornes Duin is een jong duingebied met een zeer rijke flora en fauna</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/voornes_duin">Bekijk de meetresultaten en gebiedskenmerken van Voornes duin</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_138">
+                            <div class="link">
+                                <a href="/man/gebied/weerter_en_budelerbergen_en_ringselven">Weerter- en Budelerbergen &amp; Ringselven</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Weerter- en Budelerbergen &amp; Ringselven</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het gebied bestaat uit bos, afgewisseld met heide- en stuifzandterreinen</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/weerter_en_budelerbergen_en_ringselven">Bekijk de meetresultaten en gebiedskenmerken van Weerter- en Budelerbergen &amp; Ringselven</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_73">
+                            <div class="link">
+                                <a href="/man/gebied/westerschelde_en_saeftinghe">Westerschelde en Saeftinghe</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Westerschelde en Saeftinghe</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Westerschelde is de monding van de Schelde met een sterke getijdenwerking met zand- en slikplaten en schorren</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2012</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/westerschelde_en_saeftinghe">Bekijk de meetresultaten en gebiedskenmerken van Westerschelde en Saeftinghe</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_908">
+                            <div class="link">
+                                <a href="/man/gebied/willeskop">Willeskop</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Willeskop</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Willeskop is een klein natuurontwikkelingsgebied met een langgerekte plas en open grasland</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2015</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/willeskop">Bekijk de meetresultaten en gebiedskenmerken van Willeskop</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_130">
+                            <div class="link">
+                                <a href="/man/gebied/witte_veen">Witte Veen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Witte Veen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Witte Veen herbergt met het aansluitende Duitse Witte Veen  een hoogveenrestant met natte heide en bos</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/witte_veen">Bekijk de meetresultaten en gebiedskenmerken van Witte Veen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_131">
+                            <div class="link">
+                                <a href="/man/gebied/wooldse_veen">Wooldse Veen</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Wooldse Veen</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Wooldse Veen herbergt met het aansluitende Duitse veengebied zich weer ontwikkelende stukjes hoogveen met natte heide en bos</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2006</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/wooldse_veen">Bekijk de meetresultaten en gebiedskenmerken van Wooldse Veen</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_132">
+                            <div class="link">
+                                <a href="/man/gebied/wormer_en_jisperveld_kalverpolder">Wormer- en Jisperveld &amp; Kalverpolder</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Wormer- en Jisperveld &amp; Kalverpolder</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Wormer- en Jisperveld en de Kalverpolder zijn een brak laagveengebied  met veel weiden die belangrijk zijn voor vogels</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2011</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/wormer_en_jisperveld_kalverpolder">Bekijk de meetresultaten en gebiedskenmerken van Wormer- en Jisperveld &amp; Kalverpolder</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_800">
+                            <div class="link">
+                                <a href="/man/gebied/yerseke_en_kapelse_moer">Yerseke en Kapelse Moer</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Yerseke en Kapelse Moer</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>De Yerseke en Kapelse Moer is één van de laatste stukken autenthiek Zeeuws polderlandschap met een grote verscheidenheid aan grondsoorten</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2012</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/yerseke_en_kapelse_moer">Bekijk de meetresultaten en gebiedskenmerken van Yerseke en Kapelse Moer</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                        <li id="MAN_21">
+                            <div class="link">
+                                <a href="/man/gebied/zwanenwater">Zwanenwater</a>
+                            </div>
+                            <div class="popupinfo hide">
+                                <h2>Zwanenwater</h2>
+                                <dl>
+                                    <dt class="hide">Omschrijving</dt>
+                                    <dd>Het Zwanenwater is een gebied met overwegend kalkarme duinen en drassige valleien met twee uitgestrekte meren waarbij een zeer gevarieerde vegetatie aanwezig is</dd>
+                                    <dt>Metingen sinds</dt>
+                                    <dd>2005</dd>
+                                    <dt class="hide">Detailpagina</dt>
+                                    <dd>
+                                        <a href="/man/gebied/zwanenwater">Bekijk de meetresultaten en gebiedskenmerken van Zwanenwater</a></dd>
+                                </dl>
+                            </div>
+                        </li>
+                </ol>
+            </div>
+        </div>
+    </div>
     
   </body>
 </html>

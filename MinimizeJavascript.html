@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Minimize js files</title>
+    
+    <script src="http://code.jquery.com/jquery-git.js"></script>
+    
+    
+    <style>
+      textarea {
+        height: 250px;
+        width: 48%;
+      }
+    </style>
+    
+    
+  </head>
+  <body><textarea id="input" placeholder="Paste GeoJSON here">
+  </textarea>
+<textarea id="output"></textarea>
+<button id="run">Optimize</button>
+<p style="margin-top:5px">Click "Optimize" to strip whitespace from your GeoJSON, and reduce the number of decimals in coordinates.</p>
+
+<script>
+      // Set to number of decimals to keep
+      var keepDecimals = 4;
+      
+      
+      $('#run').click(function () {
+        console.log('starting');
+        $('#output').text($('#input').val().replace(/\s/g, '').replace(/(\[-?\d+)\.(\d+)(,-?\d+)\.(\d+)(\])/g, function (s1, s2, s3, s4, s5, s6) {
+            return keepDecimals ? s2 + '.' + s3.slice(0, keepDecimals) + s4 + '.' + s5.slice(0, keepDecimals) + s6 : s2 + s4 + s6;
+        }));
+        
+        console.log('finished');
+      });
+      
+    </script>
