@@ -49,10 +49,10 @@ var mapMAN = L.map('map', mapOptions );//.setView([52.1, 5.25], 7.6);
     onEachFeature: onEachFeature
   }).addTo(mapMAN);
   
-  // nietNaturaLayer = L.geoJson(nietNaturaFeatures, {
-    // style: style,
-    // onEachFeature: onEachFeature
-  // }).addTo(mapMAN);
+  var nietNaturaLayer = L.geoJson(nietNaturaFeatures, {
+    style: style,
+    onEachFeature: onEachFeature
+  }).addTo(mapMAN);
 
   // control that shows state info on hover
   var info = L.control();
@@ -72,12 +72,18 @@ var mapMAN = L.map('map', mapOptions );//.setView([52.1, 5.25], 7.6);
       // + '[' + latlng + ']'
       : '');
   };
-  info.addTo(mapMAN);
+  // info.addTo(mapMAN);
 
-  // get color depending on population density value
+  // get color depending on Natura number
   function getColor(value) {
-    return value > 900 ? 'brown' :
-        value > 0 ? 'lightgreen' :
+    return value > 600 ? 'pink' : 
+            value > 0 ? 'lightgreen' :
+              'yellow';
+  }
+    // get highlight color depending on Natura number
+  function getHighlightColor(value) {
+    return value > 600 ? 'brown' : 
+            value > 0 ? 'green' :
               'yellow';
   }
   
@@ -102,43 +108,65 @@ var mapMAN = L.map('map', mapOptions );//.setView([52.1, 5.25], 7.6);
   }
   
   //Highlighting feature
-  var styleHighlight = {
-        fillColor: 'green',
-        // weight: 5       
-        // color: '#666',
-        //dashArray: '',
-        //fillOpacity: 0.7   
-      };
+  function styleHighlight(feature) {
+      return {
+        fillColor: getHighlightColor(feature.properties.nr),
+      // weight: 5       
+      // color: '#666',
+      //dashArray: '',
+      //fillOpacity: 0.7   
+    };
+  }
+      
   function highlightFeature(e) {
-    var layer = e.target;
-
-    layer.setStyle(styleHighlight);
-
+    var layer = e.target || e;
+    // Set style and z-order
+    layer.setStyle(styleHighlight(layer.feature));
+    
+    if ( 651 <= layer.feature.properties.nr <= 652 ) { 
+      layer.bringToFront() 
+    }
+    // Show popup
+    layer.openPopup();
+    
+    // var layerLatLng = layer.getBounds()._northEast;
+    var layerLatLng = new L.LatLng(layer.getBounds()._northEast.lat
+      , layer.getBounds()._northEast.lng - (layer.getBounds()._northEast.lng - layer.getBounds()._southWest.lng)/2 );
+    layer._popup.setLatLng(layerLatLng);
+    
     if (!L.Browser.ie && !L.Browser.opera && !L.Browser.edge) {
       layer.bringToFront();
     }
-
-    info.update(layer.feature, e.latlng);
+    
+    // Always Veluwe areas on top
+    mapMAN._layers['MAN_' + 651].bringToFront();
+    mapMAN._layers['MAN_' + 652].bringToFront();
+    
+    // info.update(layer.feature, e.latlng);
   }
   function resetHighlight(e) {
-    manLayer.resetStyle(e.target);
-    info.update();
+    var layer = e.target || e;
+    
+    manLayer.resetStyle(layer);
+    // info.update();
   }
   //Soom on select
   function zoomToFeature(e) {
       var layer = e.target;
 
       mapMAN.fitBounds(layer.getBounds());
-      info.update(layer.feature, e.latlng);
-      console.log(layer);
+      // info.update(layer.feature, e.latlng);
   }
   
   //Initialize features
   function onEachFeature(feature, layer) {
-    if (feature.properties.nr) {
+    if (!feature.properties.MAN_code) {
+      layer._leaflet_id = 'MAN_' + feature.properties.nr;
+    } else {
       layer._leaflet_id = 'MAN_' + feature.properties.MAN_code;
     }
-    
+    layer.bindPopup(feature.properties.naam_n2k, { autoPan: false });
+
     layer.on({
       mouseover: highlightFeature,
       mouseout: resetHighlight,
@@ -151,14 +179,12 @@ var mapMAN = L.map('map', mapOptions );//.setView([52.1, 5.25], 7.6);
   legend.onAdd = function (mapMAN) {
 
     var div = L.DomUtil.create('div', 'info legend'),
-      grades = [0, 10, 20, 50, 100, 200, 500, 1000],
-      labels = [],
-      from, to;
+      labels = [];
     
     labels.push('<i style="background:' + getColor(10) + '"></i> Natura 2000' );
     labels.push('<i style="background:' + getColor(901) + '"></i> Niet Natura 2000' );
     
-    div.innerHTML = labels.join('<br>');
+    div.innerHTML = labels.join('<br/>');
     return div;
   };
   legend.addTo(mapMAN);

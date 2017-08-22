@@ -13,24 +13,24 @@ $(document).ready(function () {
     sActiveImage = 'Kaart-MAN-gebieden';
 
     /* === QTip Tooltips ======================================================================================= */
-    $('area').not('area[href="#MAN_65"]').qtip({
-        content: false,
-        show: {
-            event: 'mouseover focus'
-        },
-        hide: {
-            event: 'mouseout blur'
-        },
-        position: {
-            target: 'mouse',
-            my: 'bottom center',
-            adjust: {
-                mouse: false,
-                y: 50
-            }
-        }
+    // $('area').not('area[href="#MAN_65"]').qtip({
+        // content: false,
+        // show: {
+            // event: 'mouseover focus'
+        // },
+        // hide: {
+            // event: 'mouseout blur'
+        // },
+        // position: {
+            // target: 'mouse',
+            // my: 'bottom center',
+            // adjust: {
+                // mouse: false,
+                // y: 50
+            // }
+        // }
 
-    });
+    // });
 
     // qTip items samenstellen voor Veluwe
     var veluwe_items = $('.MAN_lijst li[id*="MAN_65"]').clone(true, true);
@@ -54,27 +54,27 @@ $(document).ready(function () {
     });
 
     /* Extra keuze lijst voor Veluwe*/
-    $('area[href="#MAN_65"]').qtip({
-        content: $('<p><em>Welk gebied wilt u precies bekijken?</em></p>').append('<ul />').append(veluwe_items),
-        //        show: 'mouseover',
-        hide: {
-            fixed: true,
-            delay: 180
-        },
-        position: {
-            target: $('#kaartimage'),
-            at: 'right center',
-            my: 'right center',
-            adjust: {
-                x: 30
-            }
-        }
-    });
+    // $('area[href="#MAN_65"]').qtip({
+        // content: $('<p><em>Welk gebied wilt u precies bekijken?</em></p>').append('<ul />').append(veluwe_items),
+               // // show: 'mouseover',
+        // hide: {
+            // fixed: true,
+            // delay: 180
+        // },
+        // position: {
+            // target: $('#kaartimage'),
+            // at: 'right center',
+            // my: 'right center',
+            // adjust: {
+                // x: 30
+            // }
+        // }
+    // });
 
     //Event op extra Veluwe areas triggert VEluwe algemeen event
-    $('area[href="#MAN_651"], area[href="#MAN_652"]').bind('mouseover focus', function () {
-        $('area[href="#MAN_65"]').trigger('mouseover');
-    });
+    // $('area[href="#MAN_651"], area[href="#MAN_652"]').bind('mouseover focus', function () {
+        // $('area[href="#MAN_65"]').trigger('mouseover');
+    // });
     //Event op extra Veluwe areas triggert VEluwe algemeen event
     $('area[href="#MAN_651"], area[href="#MAN_652"]').bind('mouseout blur', function () {
         $('area[href="#MAN_65"]').trigger('mouseout');
