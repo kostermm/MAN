@@ -5,13 +5,16 @@
 
 var mapOptions = {
   center: [52.1, 5.25], //[0,-5],
-  zoom: 7.6, zoomSnap: 0.1,
+  zoom: 7.6, zoomSnap: 0.1, minZoom: 7.6,
+  zoomControl: false,
   // crs: L.CRS.EPSG3857,
+  
   attributionControl: false,
   
 }
 var mapMAN = L.map('map', mapOptions );//.setView([52.1, 5.25], 7.6);
     
+  mapMAN.addControl(new L.Control.ZoomMin());
   //*** Layers ***
   
   //L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token=pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4NXVycTA2emYycXBndHRqcmZ3N3gifQ.rJcFIG214AriISLbB6B5aw', {
@@ -29,7 +32,7 @@ var mapMAN = L.map('map', mapOptions );//.setView([52.1, 5.25], 7.6);
     // tms: true,
     id: 'ngr.wmts.gray',
     maxZoom: 14,
-    minZoom: 0
+    // minZoom: 7
   };
   var basemap = L.tileLayer(tileUrl + '/{z}/{x}/{y}.png', tileLayerOptions);
   // basemap.addTo(mapMAN);
