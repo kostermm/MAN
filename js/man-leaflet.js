@@ -7,7 +7,7 @@ var mapOptions = {
   center: [52.1, 5.25], //[0,-5],
   zoom: 7.6, zoomSnap: 0.1, minZoom: 7.6,
   zoomControl: false,
-  // crs: L.CRS.EPSG3857,
+  crs: L.CRS.EPSG3857,
   
   attributionControl: false,
   
@@ -47,7 +47,7 @@ var mapMAN = L.map('map', mapOptions );//.setView([52.1, 5.25], 7.6);
   //Fit to provinciesLayer
   // mapMAN.fitBounds(provinciesLayer.getBounds(),5)
   
-  var manLayer = L.geoJson(natura2000Features, {
+  var manLayer = L.Proj.geoJson(natura2000Features, {
     style: style,
     onEachFeature: onEachFeature
   }).addTo(mapMAN);
